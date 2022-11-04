@@ -1,0 +1,115 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net6.0-windows</TargetFramework>
+    <RootNamespace>LCD_Installation</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <ApplicationIcon>ios-icon.ico</ApplicationIcon>
+    <Platforms>AnyCPU;x64;x86</Platforms>
+    <StartupObject>LCD_Installation.App</StartupObject>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Services\**" />
+    <Compile Remove="ViewModels\**" />
+    <Compile Remove="Views\Admin\**" />
+    <Compile Remove="Views\Production\LCD_Installation\**" />
+    <Compile Remove="Views\Production\Lucia\**" />
+    <EmbeddedResource Remove="Services\**" />
+    <EmbeddedResource Remove="ViewModels\**" />
+    <EmbeddedResource Remove="Views\Admin\**" />
+    <EmbeddedResource Remove="Views\Production\LCD_Installation\**" />
+    <EmbeddedResource Remove="Views\Production\Lucia\**" />
+    <None Remove="Services\**" />
+    <None Remove="ViewModels\**" />
+    <None Remove="Views\Admin\**" />
+    <None Remove="Views\Production\LCD_Installation\**" />
+    <None Remove="Views\Production\Lucia\**" />
+    <Page Remove="Services\**" />
+    <Page Remove="ViewModels\**" />
+    <Page Remove="Views\Admin\**" />
+    <Page Remove="Views\Production\LCD_Installation\**" />
+    <Page Remove="Views\Production\Lucia\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\apple-logo.png" />
+    <None Remove="Assets\ios-icon.ico" />
+    <None Remove="Assets\main-icon.ico" />
+    <None Remove="Assets\tgBtn_default.png" />
+    <None Remove="Assets\tgBtn_MouseOver.png" />
+    <None Remove="Fonts\Roboto-Light.ttf" />
+    <None Remove="icon.ico" />
+    <None Remove="IMG\alerts\error_50px.png" />
+    <None Remove="IMG\alerts\pass_50px.png" />
+    <None Remove="IMG\backgrounds\background.jpg" />
+    <None Remove="IMG\backgrounds\Solutions Software Background.png" />
+    <None Remove="IMG\buttons\inspection_30px.png" />
+    <None Remove="IMG\buttons\maintenance_30px.png" />
+    <None Remove="IMG\buttons\screwdriver_30px.png" />
+    <None Remove="IMG\buttons\screw_30px.png" />
+    <None Remove="IMG\monitor_30px.png" />
+    <None Remove="IMG\pause_100px.png" />
+    <None Remove="IMG\play_100px.png" />
+    <None Remove="IMG\search.png" />
+    <None Remove="IMG\search_white.png" />
+    <None Remove="IMG\settings_30px.png" />
+    <None Remove="IMG\stop_100px.png" />
+    <None Remove="IMG\test_30px.png" />
+    <None Remove="IMG\video_30px.png" />
+    <None Remove="IMG\water_30px.png" />
+    <None Remove="Ingram_Background.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FreeSpire.XLS" Version="12.2.0" />
+    <PackageReference Include="LiveChartsCore.SkiaSharpView.WPF" Version="2.0.0-beta.330" />
+    <PackageReference Include="MahApps.Metro" Version="2.4.9" />
+    <PackageReference Include="MahApps.Metro.IconPacks" Version="4.11.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.7">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Notification.Wpf" Version="6.1.0.5" />
+    <PackageReference Include="Pomelo.EntityFrameworkCore.MySql" Version="6.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\apple-logo.png" />
+    <Resource Include="Assets\ios-icon.ico" />
+    <Resource Include="Assets\main-icon.ico" />
+    <Resource Include="Assets\tgBtn_default.png" />
+    <Resource Include="Assets\tgBtn_MouseOver.png" />
+    <Resource Include="Fonts\Roboto-Light.ttf" />
+    <Resource Include="IMG\alerts\error_50px.png" />
+    <Resource Include="IMG\alerts\pass_50px.png" />
+    <Resource Include="IMG\backgrounds\background.jpg" />
+    <Resource Include="IMG\backgrounds\Solutions Software Background.png" />
+    <Resource Include="IMG\buttons\inspection_30px.png" />
+    <Resource Include="IMG\buttons\maintenance_30px.png" />
+    <Resource Include="IMG\buttons\screwdriver_30px.png" />
+    <Resource Include="IMG\buttons\screw_30px.png" />
+    <Resource Include="IMG\buttons\monitor_30px.png" />
+    <Resource Include="IMG\pause_100px.png" />
+    <Resource Include="IMG\play_100px.png" />
+    <Resource Include="IMG\search.png" />
+    <Resource Include="IMG\search_white.png" />
+    <Resource Include="IMG\buttons\settings_30px.png" />
+    <Resource Include="IMG\stop_100px.png" />
+    <Resource Include="IMG\buttons\test_30px.png" />
+    <Resource Include="IMG\video_30px.png" />
+    <Resource Include="IMG\water_30px.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Page Update="Views\BandPView.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+    <Page Update="Views\Production\Disassembly\DisassemblyWIP.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+    </Page>
+  </ItemGroup>
+
+</Project>

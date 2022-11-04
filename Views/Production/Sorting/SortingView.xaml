@@ -1,0 +1,79 @@
+﻿<UserControl x:Class="LCD_Installation.Views.SortingView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LCD_Installation.Views"
+             xmlns:notifications="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
+             mc:Ignorable="d" 
+             d:Width="922" d:Height="582" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Loaded="UserControl_Loaded">
+    <Grid>
+        <notifications:NotificationArea  x:Name="WindowArea" Position="TopCenter" MaxItems="1" Margin="4,8,4,0"/>
+        <TextBlock HorizontalAlignment="Left" Margin="173,101,0,0" Text="Sorting" VerticalAlignment="Top" FontWeight="Bold" FontSize="20" RenderTransformOrigin="0.172,1.034"/>
+        <TextBox HorizontalContentAlignment="Center" x:Name="txtImei" HorizontalAlignment="Left" Margin="124,162,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="168" Height="30" MaxLines="1" MaxLength="15" PreviewTextInput="txtImei_PreviewTextInput"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="124,141,0,0" Text="Ingrese el imei" VerticalAlignment="Top" Width="151" FontSize="14"/>
+        <ComboBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="cbCondition" HorizontalAlignment="Left" Margin="128,316,0,0" VerticalAlignment="Top" Width="168" Height="25" RenderTransformOrigin="0.5,0.5"  DropDownClosed="cbCondition_DropDownClosed">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.094" AngleX="0.655"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.123" X="0.114"/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="BER"/>
+            <ComboBoxItem Content="BP"/>
+            <ComboBoxItem Content="PVD"/>
+            <ComboBoxItem Content="Rework"/>
+            <ComboBoxItem Content="FG"/>
+            <ComboBoxItem Content="LUCIA"/>
+        </ComboBox>
+        <ComboBox HorizontalContentAlignment="Center" x:Name="cbAA" HorizontalAlignment="Left" Margin="130,377,0,0" VerticalAlignment="Top" Width="59">
+            <ComboBoxItem Content="N1"/>
+            <ComboBoxItem Content="N2"/>
+            <ComboBoxItem Content="N3"/>
+            <ComboBoxItem Content="N4"/>
+            <ComboBoxItem Content="N5"/>
+            <ComboBoxItem Content="FG"/>
+        </ComboBox>
+        <ComboBox HorizontalContentAlignment="Center" x:Name="cbBD" HorizontalAlignment="Left" Margin="227,377,0,0" VerticalAlignment="Top" Width="59">
+            <ComboBoxItem Content="N1"/>
+            <ComboBoxItem Content="N2"/>
+            <ComboBoxItem Content="N3"/>
+            <ComboBoxItem Content="N4"/>
+            <ComboBoxItem Content="N5"/>
+            <ComboBoxItem Content="FG"/>
+        </ComboBox>
+        <ComboBox HorizontalContentAlignment="Center" Text="Test" x:Name="cbFailure" HorizontalAlignment="Left" Margin="130,445,0,0" VerticalAlignment="Top" Width="162" Height="26"/>
+        <Button x:Name="btnIngresar" Content="Ingresar" HorizontalAlignment="Left" Margin="130,498,0,0" VerticalAlignment="Top" Width="162" Height="31" Click="btnIngresar_Click"/>
+        <DataGrid MinColumnWidth="100" x:Name="DataGridView1" d:ItemsSource="{d:SampleData ItemCount=5}" Background="{x:Null}" HeadersVisibility="Column" CanUserAddRows="False" CanUserDeleteRows="False" MinRowHeight="15" ScrollViewer.CanContentScroll="True" Margin="314,114,10,37" KeyUp="DataGridView1_KeyUp">
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            Header="IsSelected"
+                            Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="124,294,0,0" Text="Seleccione la condición" VerticalAlignment="Top" Width="168" FontSize="14"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="151,357,0,0" Text="AA" VerticalAlignment="Top" Width="32" FontSize="14"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="233,354,0,0" Text="BD" VerticalAlignment="Top" Width="32" FontSize="14"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="130,422,0,0" Text="Seleccione el fallo" VerticalAlignment="Top" Width="156" FontSize="14"/>
+
+        <Image HorizontalAlignment="Left" Height="27" Margin="262,162,0,0" VerticalAlignment="Top" Width="30" Source="/IMG/search_white.png"  RenderTransformOrigin="0.357,0.432" MouseLeftButtonUp="Image_MouseLeftButtonUp"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="124,194,0,0" Text="Seleccione el tipo" VerticalAlignment="Top" Width="168" FontSize="14"/>
+        <ComboBox HorizontalContentAlignment="Center" VerticalContentAlignment="Center" x:Name="cbTipo" HorizontalAlignment="Left" Margin="132,232,0,0" VerticalAlignment="Top" Width="168" Height="25" RenderTransformOrigin="0.5,0.5"  DropDownClosed="cbTipo_DropDownClosed">
+            <ComboBox.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform AngleY="0.094" AngleX="0.655"/>
+                    <RotateTransform/>
+                    <TranslateTransform Y="0.123" X="0.114"/>
+                </TransformGroup>
+            </ComboBox.RenderTransform>
+            <ComboBoxItem Content="Giddy"/>
+            <ComboBoxItem Content="Lucia"/>
+            <ComboBoxItem Content="Transfer to Lucia"/>
+    
+        </ComboBox>
+    </Grid>
+</UserControl>

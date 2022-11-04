@@ -1,0 +1,50 @@
+﻿<UserControl x:Class="LCD_Installation.Views.LLanteraVIew"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:notifications="clr-namespace:Notification.Wpf.Controls;assembly=Notification.Wpf"
+             xmlns:local="clr-namespace:LCD_Installation.Views"
+             mc:Ignorable="d" 
+             
+             d:Width="922" d:Height="582" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch" Loaded="UserControl_Loaded">
+    <Grid  x:Name="cbLeft1" RenderTransformOrigin="0.536,0.524">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="551*"/>
+            <RowDefinition Height="32*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <notifications:NotificationArea  x:Name="WindowArea" Position="TopCenter" MaxItems="1" Grid.RowSpan="2"/>
+
+        <DataGrid x:Name="DataGridView1" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="404,90,10,10" Background="{x:Null}" HeadersVisibility="Column" CanUserAddRows="False" CanUserDeleteRows="False" MinRowHeight="15" ScrollViewer.CanContentScroll="True" ColumnWidth="SizeToHeader" MinColumnWidth="100" CanUserResizeColumns="False" CanUserReorderColumns="False">
+
+            <DataGrid.Columns>
+                <DataGridCheckBoxColumn ElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            EditingElementStyle="{DynamicResource MetroDataGridCheckBox}"
+                            Header="IsSelected"
+                            Binding="{Binding RelativeSource={RelativeSource AncestorType=DataGridRow}, Path=IsSelected, Mode=OneWay}" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <ComboBox HorizontalContentAlignment="Center" x:Name="cbMaterial" HorizontalAlignment="Left" Margin="164,133,0,0" VerticalAlignment="Top" Width="166">
+            <ComboBoxItem Content="BD"/>
+            <ComboBoxItem Content="Housing PVD"/>
+            <ComboBoxItem Content="L1"/>
+            <ComboBoxItem Content="L2"/>
+            <ComboBoxItem Content="LCD Disassembly"/>
+        </ComboBox>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="164,114,0,0" Text="Material" VerticalAlignment="Top" Height="19" Width="166"/>
+        <TextBox  x:Name="txtCantidad" HorizontalContentAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="166" Margin="164,366,0,0" PreviewTextInput="txtCantidad_PreviewTextInput" MaxLength="3" MaxLines="1"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="164,342,0,0" Text="Cantidad" VerticalAlignment="Top" Height="19" Width="166"/>
+        <Button  Content="Registar datos" HorizontalAlignment="Left" Margin="164,410,0,0" VerticalAlignment="Top" Height="32" Width="166" Click="Button_Click"/>
+        <Button Content="Eliminar registro" HorizontalAlignment="Left" Margin="164,458,0,0" VerticalAlignment="Top" Height="34" Width="166" Click="Button_Click_1"/>
+        <RadioButton x:Name="chbIngreso" Content="Ingreso" HorizontalAlignment="Left" Margin="164,271,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="chbSalida" Content="Salida" HorizontalAlignment="Left" Margin="282,271,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="chbRehazo" Content="Rechazo" HorizontalAlignment="Left" Margin="164,228,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="chbScrap" Content="Scrap" HorizontalAlignment="Left" Margin="282,228,0,0" VerticalAlignment="Top"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="164,190,0,0" Text="Condición" VerticalAlignment="Top" Height="19" Width="166"/>
+        <TextBlock HorizontalAlignment="Left" Margin="121,68,0,0" Text="Buff and Polish Production" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
+    
+    </Grid>
+</UserControl>

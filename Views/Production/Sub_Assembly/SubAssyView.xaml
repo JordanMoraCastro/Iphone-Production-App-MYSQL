@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="LCD_Installation.Views.SubAssyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:LCD_Installation.Views"
+             mc:Ignorable="d" 
+             d:Width="922" d:Height="582" HorizontalAlignment="Stretch"  VerticalAlignment="Stretch">
+    <Grid>
+        <TextBox x:Name="txtCode" HorizontalAlignment="Left" Margin="110,64,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" RenderTransformOrigin="-0.179,0.247"/>
+        <Button Content="Generar QR" HorizontalAlignment="Left" Margin="110,95,0,0" VerticalAlignment="Top" Width="120" Height="35" Click="Button_Click"/>
+        <Button Content="Imprimir" HorizontalAlignment="Left" Margin="110,144,0,0" VerticalAlignment="Top" Height="37" Width="120" Click="Button_Click_1"/>
+        <StackPanel x:Name="lblPanel" HorizontalAlignment="Left" Height="136" Margin="263,64,0,0" VerticalAlignment="Top" Width="247">
+            <Image x:Name="qrImg" Height="101" Width="242"/>
+            <TextBlock TextAlignment="Center" Text="Sub_Assy : 45645666466"/>
+        </StackPanel>
+
+    </Grid>
+</UserControl>
