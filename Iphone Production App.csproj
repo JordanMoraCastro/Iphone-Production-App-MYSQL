@@ -60,6 +60,8 @@
     <None Remove="IMG\video_30px.png" />
     <None Remove="IMG\water_30px.png" />
     <None Remove="Ingram_Background.jpg" />
+    <None Remove="Views\Employee\TimeOut\bathroom.jpg" />
+    <None Remove="Views\Employee\TimeOut\check.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -101,6 +103,8 @@
     <Resource Include="IMG\buttons\test_30px.png" />
     <Resource Include="IMG\video_30px.png" />
     <Resource Include="IMG\water_30px.png" />
+    <Resource Include="Views\Employee\TimeOut\bathroom.jpg" />
+    <Resource Include="Views\Employee\TimeOut\check.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -110,6 +114,10 @@
     <Page Update="Views\Production\Disassembly\DisassemblyWIP.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
     </Page>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Migrations\" />
   </ItemGroup>
 
 </Project>

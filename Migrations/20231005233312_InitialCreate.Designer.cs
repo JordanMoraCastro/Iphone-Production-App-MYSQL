@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LCD_Installation.Migrations
 {
     [DbContext(typeof(Iphone_Production_AppContext))]
-    [Migration("20221104022142_V4.0")]
-    partial class V40
+    [Migration("20231005233312_InitialCreate")]
+    partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

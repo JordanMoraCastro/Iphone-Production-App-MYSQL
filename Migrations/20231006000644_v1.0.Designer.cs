@@ -11,15 +11,15 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LCD_Installation.Migrations
 {
     [DbContext(typeof(Iphone_Production_AppContext))]
-    [Migration("20220625211618_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20231006000644_v1.0")]
+    partial class v10
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
                 .UseCollation("latin1_general_ci")
-                .HasAnnotation("ProductVersion", "6.0.6")
+                .HasAnnotation("ProductVersion", "6.0.7")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             modelBuilder.Entity("LCD_Installation.Models.AssemblyFailureCode", b =>
@@ -278,6 +278,104 @@ namespace LCD_Installation.Migrations
                     b.ToTable("Disassembly_Input", (string)null);
                 });
 
+            modelBuilder.Entity("LCD_Installation.Models.LCDCenterProduction", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Condition")
+                        .HasMaxLength(5)
+                        .HasColumnType("varchar(5)");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime?>("DateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Failure")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Imei")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<int?>("Lap")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.Property<string>("Step")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("User")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LCDCenter_Production", (string)null);
+                });
+
+            modelBuilder.Entity("LCD_Installation.Models.LCDCenterWIP", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("CurrentLocation")
+                        .HasMaxLength(20)
+                        .HasColumnType("varchar(20)");
+
+                    b.Property<int>("DaysInLocation")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Failure")
+                        .HasMaxLength(50)
+                        .HasColumnType("varchar(50)");
+
+                    b.Property<string>("Imei")
+                        .HasMaxLength(16)
+                        .HasColumnType("varchar(16)");
+
+                    b.Property<int>("Lap")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime?>("LastScanDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime?>("LastScanDateTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("PreviousLocation")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Process")
+                        .HasColumnType("longtext");
+
+                    b.Property<DateTime?>("ReceiptDate")
+                        .HasColumnType("datetime");
+
+                    b.Property<DateTime?>("ReceiptDateTime")
+                        .HasColumnType("datetime");
+
+                    b.Property<string>("Status")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("UserName")
+                        .HasMaxLength(10)
+                        .HasColumnType("varchar(10)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("LCDCenter_WIP", (string)null);
+                });
+
             modelBuilder.Entity("LCD_Installation.Models.Permiso", b =>
                 {
                     b.Property<int>("Id")
@@ -376,14 +474,62 @@ namespace LCD_Installation.Migrations
                         .HasColumnType("datetime")
                         .HasColumnName("M_Fecha");
 
+                    b.Property<string>("Origen")
+                        .HasColumnType("longtext");
+
                     b.Property<string>("PCondition")
                         .HasMaxLength(50)
                         .HasColumnType("varchar(50)")
                         .HasColumnName("P_Condition");
 
+                    b.Property<string>("Tipo_Material")
+                        .HasColumnType("longtext");
+
                     b.HasKey("Id");
 
                     b.ToTable("Sorting_Production", (string)null);
+                });
+
+            modelBuilder.Entity("LCD_Installation.Models.TimeOut", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("AdminArea")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Bathroom")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ConsultingRoom")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("ExitTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("Locker")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Parking")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime?>("ReturnTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id")
+                        .HasName("PRIMARY");
+
+                    b.ToTable("TimeOut", (string)null);
                 });
 
             modelBuilder.Entity("LCD_Installation.Models.Usuario", b =>

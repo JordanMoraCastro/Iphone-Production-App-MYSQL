@@ -10,7 +10,7 @@ using System.Windows.Media.Imaging;
 using System;
 using System.Windows.Media;
 using LCD_Installation.Views.Production.LCD_Center;
-
+using LCD_Installation.Views.Employee.TimeOut;
 
 namespace Navigation_Drawer_App
 {
@@ -24,7 +24,7 @@ namespace Navigation_Drawer_App
         readonly UserControl Jig = new JigView();
         readonly UserControl Dummy = new DummyView();
         readonly UserControl DisassemblyView = new DisassemblyView();
-        readonly UserControl RoxerView = new RoxerView();
+        readonly UserControl RoxerView = new TimeOutView();
         readonly UserControl SortingView = new SortingView();
         readonly UserControl DisassemblyWip = new DisassemblyWIP();
         readonly UserControl LCDCenterView = new LCDCenterView();

@@ -21,6 +21,7 @@ namespace LCD_Installation.Models
 
 
         public virtual DbSet<AssemblyFailureCode> AssemblyFailureCodes { get; set; }
+        public virtual DbSet<TimeOut> TimeOut { get; set; }
         public virtual DbSet<LCDCenterProduction> LCDCenterProductions { get; set; }
         public virtual DbSet<LCDCenterWIP> LCDCenterWips { get; set; }
         public virtual DbSet<AssyFailure> AssyFailures { get; set; }
@@ -42,7 +43,7 @@ namespace LCD_Installation.Models
                 //optionsBuilder.UseSqlServer(ConfigurationManager.AppSettings["ConnectionString"]);
 
 
-                optionsBuilder.UseMySql(connectionString: @"server=crrcizweng1001;database=iphone.production;uid=JordanCastro;password=2uhOXoW6;",
+                optionsBuilder.UseMySql(connectionString: @"server=127.0.0.1;database=iphone_production_app;uid=root;password=PASSWORD;",
                 new MySqlServerVersion(new Version(10, 4, 17)));
           
 
@@ -59,6 +60,15 @@ namespace LCD_Installation.Models
                 entity.HasNoKey();
 
                 entity.ToTable("Assembly_FailureCodes");
+            });
+
+            modelBuilder.Entity<TimeOut>(entity =>
+            {
+                entity.HasKey(e => e.Id)
+                    .HasName("PRIMARY");
+
+                entity.ToTable("TimeOut");
+
             });
 
             modelBuilder.Entity<AssyFailure>(entity =>

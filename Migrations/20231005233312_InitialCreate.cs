@@ -139,6 +139,54 @@ namespace LCD_Installation.Migrations
                 .Annotation("Relational:Collation", "latin1_general_ci");
 
             migrationBuilder.CreateTable(
+                name: "LCDCenter_Production",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Date = table.Column<DateTime>(type: "datetime", nullable: true),
+                    DateTime = table.Column<DateTime>(type: "datetime", nullable: true),
+                    Imei = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Step = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Failure = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Condition = table.Column<string>(type: "varchar(5)", maxLength: 5, nullable: true, collation: "latin1_general_ci"),
+                    User = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Location = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: true, collation: "latin1_general_ci"),
+                    Lap = table.Column<int>(type: "int", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LCDCenter_Production", x => x.Id);
+                })
+                .Annotation("Relational:Collation", "latin1_general_ci");
+
+            migrationBuilder.CreateTable(
+                name: "LCDCenter_WIP",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ReceiptDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    ReceiptDateTime = table.Column<DateTime>(type: "datetime", nullable: true),
+                    LastScanDate = table.Column<DateTime>(type: "datetime", nullable: true),
+                    LastScanDateTime = table.Column<DateTime>(type: "datetime(6)", nullable: true),
+                    Imei = table.Column<string>(type: "varchar(16)", maxLength: 16, nullable: true, collation: "latin1_general_ci"),
+                    Process = table.Column<string>(type: "longtext", nullable: true, collation: "latin1_general_ci"),
+                    UserName = table.Column<string>(type: "varchar(10)", maxLength: 10, nullable: true, collation: "latin1_general_ci"),
+                    CurrentLocation = table.Column<string>(type: "varchar(20)", maxLength: 20, nullable: true, collation: "latin1_general_ci"),
+                    PreviousLocation = table.Column<string>(type: "longtext", nullable: true, collation: "latin1_general_ci"),
+                    DaysInLocation = table.Column<int>(type: "int", nullable: false),
+                    Status = table.Column<string>(type: "longtext", nullable: true, collation: "latin1_general_ci"),
+                    Failure = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Lap = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_LCDCenter_WIP", x => x.Id);
+                })
+                .Annotation("Relational:Collation", "latin1_general_ci");
+
+            migrationBuilder.CreateTable(
                 name: "Permisos",
                 columns: table => new
                 {
@@ -180,6 +228,8 @@ namespace LCD_Installation.Migrations
                     BD = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
                     P_Condition = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
                     Fallos = table.Column<string>(type: "varchar(50)", maxLength: 50, nullable: true, collation: "latin1_general_ci"),
+                    Tipo_Material = table.Column<string>(type: "longtext", nullable: true, collation: "latin1_general_ci"),
+                    Origen = table.Column<string>(type: "longtext", nullable: true, collation: "latin1_general_ci"),
                     Fecha = table.Column<DateTime>(type: "datetime", nullable: true),
                     Hora = table.Column<DateTime>(type: "datetime", nullable: true),
                     M_Fecha = table.Column<DateTime>(type: "datetime", nullable: true)
@@ -259,6 +309,12 @@ namespace LCD_Installation.Migrations
 
             migrationBuilder.DropTable(
                 name: "Disassembly_Production");
+
+            migrationBuilder.DropTable(
+                name: "LCDCenter_Production");
+
+            migrationBuilder.DropTable(
+                name: "LCDCenter_WIP");
 
             migrationBuilder.DropTable(
                 name: "Permisos_Usuarios");

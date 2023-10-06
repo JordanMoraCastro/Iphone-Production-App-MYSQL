@@ -488,6 +488,48 @@ namespace LCD_Installation.Migrations
                     b.ToTable("Sorting_Production", (string)null);
                 });
 
+            modelBuilder.Entity("LCD_Installation.Models.TimeOut", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<bool>("AdminArea")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Bathroom")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("ConsultingRoom")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime?>("Date")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<DateTime?>("ExitTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("Locker")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("Parking")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<DateTime?>("ReturnTime")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<bool>("Status")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("UserID")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id")
+                        .HasName("PRIMARY");
+
+                    b.ToTable("TimeOut", (string)null);
+                });
+
             modelBuilder.Entity("LCD_Installation.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
