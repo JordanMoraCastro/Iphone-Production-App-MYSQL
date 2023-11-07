@@ -24,7 +24,7 @@ namespace Navigation_Drawer_App
         readonly UserControl Jig = new JigView();
         readonly UserControl Dummy = new DummyView();
         readonly UserControl DisassemblyView = new DisassemblyView();
-        readonly UserControl RoxerView = new TimeOutView();
+        readonly UserControl RoxerView = new RoxerView();
         readonly UserControl SortingView = new SortingView();
         readonly UserControl DisassemblyWip = new DisassemblyWIP();
         readonly UserControl LCDCenterView = new LCDCenterView();

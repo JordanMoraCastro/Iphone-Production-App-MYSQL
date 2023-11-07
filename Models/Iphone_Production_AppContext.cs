@@ -22,6 +22,8 @@ namespace LCD_Installation.Models
 
         public virtual DbSet<AssemblyFailureCode> AssemblyFailureCodes { get; set; }
         public virtual DbSet<TimeOut> TimeOut { get; set; }
+
+        public virtual DbSet<Roxer> Roxer { get; set; }
         public virtual DbSet<LCDCenterProduction> LCDCenterProductions { get; set; }
         public virtual DbSet<LCDCenterWIP> LCDCenterWips { get; set; }
         public virtual DbSet<AssyFailure> AssyFailures { get; set; }
@@ -91,6 +93,23 @@ namespace LCD_Installation.Models
                 entity.Property(e => e.UserName)
                     .HasMaxLength(50)
                     .HasColumnName("User_Name");
+            });
+
+
+            modelBuilder.Entity<Roxer>(entity =>
+            {
+
+                entity.ToTable("Roxer");
+
+
+                entity.Property(e => e.Date).HasColumnType("datetime");
+
+                entity.Property(e => e.DateTime).HasColumnType("datetime");
+
+   
+
+                entity.Property(e => e.Imei).HasMaxLength(16);
+
             });
 
             modelBuilder.Entity<AsyJigProduction>(entity =>

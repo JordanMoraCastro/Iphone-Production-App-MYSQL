@@ -19,19 +19,29 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <notifications:NotificationArea  x:Name="WindowArea" Position="TopCenter" MaxItems="1" Margin="4,0,4,0" Grid.RowSpan="2"/>
-        <TextBox HorizontalContentAlignment="Center" x:Name="txtImei" HorizontalAlignment="Left" Margin="113,139,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Height="24" MaxLength="15"/>
-        <Button x:Name="btnInsert" Content="Registrar unidad" HorizontalAlignment="Left" Margin="113,272,0,0" VerticalAlignment="Top" Height="37" Width="186"  FontWeight="Bold" />
-        <Button x:Name="btnDelete" Content="Retener unidad" HorizontalAlignment="Left" Margin="113,344,0,0" VerticalAlignment="Top" Height="34" Width="187"  FontWeight="Bold"/>
+        <TextBox HorizontalContentAlignment="Center" x:Name="txtImei" HorizontalAlignment="Left" Margin="113,144,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="181" Height="24" MaxLength="15"/>
+        <Button x:Name="btnInsert" Content="Registrar unidad" HorizontalAlignment="Left" Margin="104,458,0,0" VerticalAlignment="Top" Height="37" Width="186"  FontWeight="Bold" Click="btnInsert_Click" />
         <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="104,104,0,0" Text="Ingrese el imei" VerticalAlignment="Top" Width="214" Height="17" FontWeight="Bold" FontSize="15"/>
         <Image Source="/IMG/search_white.png" HorizontalAlignment="Left" Height="21" Margin="272,118,0,0" VerticalAlignment="Top" Width="21" />
         <TextBlock HorizontalAlignment="Left" Margin="163,63,0,0" Text="Roxer Test" VerticalAlignment="Top" FontWeight="Bold" FontSize="20"/>
 
         <lvc:CartesianChart
-          Margin="373,104,10,120"
+          Margin="373,104,10,172"
           x:Name="RoxerChart">
         </lvc:CartesianChart>
-        <TextBlock Margin="587,49,224,459" Text="Roxer Data" FontWeight="Bold" FontSize="20" HorizontalAlignment="Right" VerticalAlignment="Top"/>
+        <TextBlock Margin="587,49,224,459" Text="Roxer Data" FontWeight="Bold" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdPass" Content="PASS" HorizontalAlignment="Left" Margin="147,232,0,0" VerticalAlignment="Top"/>
+        <RadioButton x:Name="rdFail" Content="FAIL" HorizontalAlignment="Left" Margin="211,231,0,0" VerticalAlignment="Top" Checked="rdFail_Checked" Unchecked="rdFail_Unchecked"/>
+        <ComboBox Name="cbPart" HorizontalAlignment="Left" Margin="113,311,0,0" VerticalAlignment="Top" Width="181"  >
+            <ComboBoxItem Content="Botones"/>
+            <ComboBoxItem Content="Superficies"/>
+            <ComboBoxItem Content="Componentes"/>
+           </ComboBox>
 
+        <ComboBox Name="cbLeak" HorizontalAlignment="Left" Margin="113,392,0,0" VerticalAlignment="Top" Width="181" DropDownOpened="cbLeak_DropDownOpened"/>
+
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="90,281,0,0" Text="Seleccione la superficie" VerticalAlignment="Top" Width="214" Height="17" FontWeight="Bold" FontSize="15"/>
+        <TextBlock TextAlignment="Center" HorizontalAlignment="Left" Margin="90,367,0,0" Text="Seleccione el componente" VerticalAlignment="Top" Width="214" Height="17" FontWeight="Bold" FontSize="15"/>
 
     </Grid>
 </UserControl>

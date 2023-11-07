@@ -3,6 +3,7 @@ using System;
 using LCD_Installation.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LCD_Installation.Migrations
 {
     [DbContext(typeof(Iphone_Production_AppContext))]
-    partial class Iphone_Production_AppContextModelSnapshot : ModelSnapshot
+    [Migration("20231107021610_V3.1")]
+    partial class V31
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -425,8 +427,8 @@ namespace LCD_Installation.Migrations
                     b.Property<DateTime?>("DateTime")
                         .HasColumnType("datetime");
 
-                    b.Property<string>("Firts_Pass")
-                        .HasColumnType("longtext");
+                    b.Property<bool>("Firts_Pass")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Imei")
                         .HasMaxLength(16)
@@ -441,8 +443,8 @@ namespace LCD_Installation.Migrations
                     b.Property<string>("Roxer_Condition")
                         .HasColumnType("longtext");
 
-                    b.Property<string>("Second_Pass")
-                        .HasColumnType("longtext");
+                    b.Property<bool>("Second_Pass")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Status")
                         .HasColumnType("longtext");
